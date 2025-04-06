@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Lista zadań</title>
+</head>
+<body>
+    <h1>Lista zadań</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nazwa</th>
+                <th>Opis</th>
+                <th>Ukończone</th>
+                <th>Data utworzenia</th>
+                <th>Termin</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="task : ${tasks}">
+                <td th:text="${task.id}"></td>
+                <td th:text="${task.name}"></td>
+                <td th:text="${task.description}"></td>
+                <td th:text="${task.completed} ? 'Tak' : 'Nie'"></td>
+                <td th:text="${task.createdAt}"></td>
+                <td th:text="${task.dueDate}"></td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>
