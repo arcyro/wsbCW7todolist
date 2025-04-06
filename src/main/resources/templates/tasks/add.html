@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dodaj zadanie</title>
+</head>
+<body>
+    <h1>Dodaj zadanie</h1>
+    <form  th:action="@{/tasks/add}" th:object="${task}" method="post">
+        <div>
+            <label for="name">Nazwa:</label>
+            <input type="text" id="name" th:field="*{name}" />
+        </div>
+        <div>
+            <label for="description">Opis:</label>
+            <textarea id="description" th:field="*{description}"></textarea>
+        </div>
+<!--        <div>-->
+<!--            <label for="dueDate">Termin:</label>-->
+<!--            <input type="datetime-local" id="dueDate" th:field="*{dueDate}" />-->
+<!--        </div>-->
+        <div>
+            <button type="submit">Dodaj</button>
+        </div>
+    </form>
+</body>
+</html>
